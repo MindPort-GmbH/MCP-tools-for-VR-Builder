@@ -1,0 +1,27 @@
+{
+    "name": "VRBuilder.MCP.IvanMurzak.Editor",
+    "rootNamespace": "VRBuilder.MCP.IvanMurzak.CustomTools.Editor",
+    "references": [
+        "VRBuilder.MCP.Core",
+        "com.IvanMurzak.Unity.MCP.Common"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "IVANMURZAK_MCP_INSTALLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.ivanmurzak.unity.mcp",
+            "expression": "",
+            "define": "IVANMURZAK_MCP_INSTALLED"
+        }
+    ],
+    "noEngineReferences": false
+}

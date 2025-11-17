@@ -1,0 +1,18 @@
+{
+    "name": "VRBuilder.MCP.Tests",
+    "rootNamespace": "VRBuilder.MCP.Tests",
+    "references": [
+        "VRBuilder.MCP.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

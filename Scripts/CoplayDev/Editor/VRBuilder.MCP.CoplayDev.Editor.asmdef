@@ -1,0 +1,27 @@
+{
+    "name": "VRBuilder.MCP.CoplayDev.Editor",
+    "rootNamespace": "VRBuilder.MCP.CoplayDev.CustomTools.Editor",
+    "references": [
+        "VRBuilder.MCP.Core",
+        "MCPForUnity.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "COPLAYDEV_MCP_INSTALLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.coplaydev.unity-mcp",
+            "expression": "",
+            "define": "COPLAYDEV_MCP_INSTALLED"
+        }
+    ],
+    "noEngineReferences": false
+}

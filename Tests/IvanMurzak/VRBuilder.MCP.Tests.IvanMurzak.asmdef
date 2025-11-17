@@ -1,0 +1,33 @@
+{
+    "name": "VRBuilder.MCP.Tests.IvanMurzak",
+    "rootNamespace": "VRBuilder.MCP.Tests.IvanMurzak",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "VRBuilder.Core",
+        "VRBuilder.MCP.Core",
+        "VRBuilder.MCP.Tests",
+        "VRBuilder.MCP.IvanMurzak.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "IVANMURZAK_MCP_INSTALLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.ivanmurzak.unity.mcp",
+            "expression": "",
+            "define": "IVANMURZAK_MCP_INSTALLED"
+        }
+    ],
+    "noEngineReferences": false
+}

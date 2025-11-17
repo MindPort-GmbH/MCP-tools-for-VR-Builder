@@ -1,0 +1,24 @@
+{
+    "name": "VRBuilder.MCP.Tests.Core",
+    "rootNamespace": "VRBuilder.MCP.Tests.Core",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "VRBuilder.Core",
+        "VRBuilder.MCP.Core",
+        "VRBuilder.MCP.Tests"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

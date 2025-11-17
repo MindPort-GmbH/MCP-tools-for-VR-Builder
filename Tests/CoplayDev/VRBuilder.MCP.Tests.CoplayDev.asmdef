@@ -1,0 +1,35 @@
+{
+    "name": "VRBuilder.MCP.Tests.CoplayDev",
+    "rootNamespace": "VRBuilder.MCP.Tests.CoplayDev",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "VRBuilder.Core",
+        "VRBuilder.MCP.Core",
+        "VRBuilder.MCP.Tests",
+        "VRBuilder.MCP.CoplayDev.Editor",
+        "MCPForUnity.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "COPLAYDEV_MCP_INSTALLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.coplaydev.unity-mcp",
+            "expression": "",
+            "define": "COPLAYDEV_MCP_INSTALLED"
+        }
+    ],
+    "noEngineReferences": false
+}

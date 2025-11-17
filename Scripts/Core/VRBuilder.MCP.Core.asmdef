@@ -1,0 +1,16 @@
+{
+    "name": "VRBuilder.MCP.Core",
+    "rootNamespace": "VRBuilder.MCP.Core",
+    "references": [
+        "VRBuilder.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

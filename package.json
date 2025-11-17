@@ -1,0 +1,21 @@
+{
+  "displayName": "VR Builder MCP Tools",
+  "name": "co.mindport.vrbuilder.mcp",
+  "version": "0.1.0",
+  "unity": "6000.0.58f2",
+  "description": "VR Builder MCP cutom tools.",
+  "keywords": [
+    "builder",
+    "vr",
+    "mindport",
+    "mcp"
+  ],
+  "author": {
+    "name": "MindPort",
+    "email": "contact@mindport.co",
+    "url": "https://mindport.co/"
+  },
+  "dependencies": {
+    "co.mindport.vrbuilder.core": "5.5.0"
+  }
+}

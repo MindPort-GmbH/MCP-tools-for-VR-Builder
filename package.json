@@ -2,8 +2,8 @@
   "displayName": "VR Builder MCP Tools",
   "name": "co.mindport.vrbuilder.mcp",
   "version": "0.1.0",
-  "unity": "6000.0.58f2",
-  "description": "VR Builder MCP cutom tools.",
+  "unity": "6000.0",
+  "description": "Custom MCP tools for VR Builder, enabling AI-assisted creation and modification of VR Builder processes.",
   "keywords": [
     "builder",
     "vr",

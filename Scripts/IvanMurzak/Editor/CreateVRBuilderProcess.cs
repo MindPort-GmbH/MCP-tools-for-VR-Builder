@@ -23,32 +23,14 @@ namespace VRBuilder.MCP.IvanMurzak.CustomTools.Editor
         /// If no chapters provided, creates a default empty chapter.
         /// JSON field names must use camelCase.
         /// </summary>
-        [McpPluginTool("vrb-create-process", Title = "Create VR Builder Process JSON")]
-        [Description(@"Create a VR Builder process and save it to StreamingAssets/<processName>/<processName>.json. Chapter names are required. JSON field names must use camelCase.
-                    FORMAT EXAMPLE:
-                    {
-                    ""processName"": ""MyTrainingProcess"",
-                    ""chapters"": [
-                        {
-                        ""name"": ""Introduction"",
-                        ""steps"": [
-                            {
-                            ""name"": ""Welcome"",
-                            ""description"": ""Introduction to the training module"",
-                            ""position"": { ""x"": 300, ""y"": 0}
-                            }
-                        ]
-                        }
-                    ],
-                    ""overwrite"": true
-                    }
-                    ")]
+        [McpPluginTool("create_vr_builder_process", Title = "Create VR Builder Process JSON")]
+        [Description(@"Create a VR Builder process and save it to StreamingAssets/<processName>/<processName>.json. Chapter names are required. All JSON fields names must be camelCase.")]
         public static VRBuilderProcessResponse CreateProcess
         (
-            [Description("Name of the process (and output folder/file).")]
+            [Description("Name of the process.")]
             string processName,
 
-            [Description("Optional: Chapters data. Each chapter MUST have an explicit Name. Steps are optional (empty chapters allowed). Steps may include Description and Position [x,y].")]
+            [Description("Chapters data. Each chapter includes an automatic Start step at [0, 0]. If null/empty, creates default Chapter 1.")]
             ChapterArg[]? chapters = null,
 
             [Description("Overwrite the target file if it already exists.")]
@@ -108,15 +90,15 @@ namespace VRBuilder.MCP.IvanMurzak.CustomTools.Editor
                 {
                     var chArg = chaptersArg[i] ?? new ChapterArg();
 
-                    if (string.IsNullOrWhiteSpace(chArg.Name))
+                    if (string.IsNullOrWhiteSpace(chArg.name))
                     {
                         throw new ArgumentException($"Chapter {i} is missing a required 'Name' property");
                     }
 
                     var chapter = new ChapterData
                     {
-                        Name = chArg.Name.Trim(),
-                        Steps = ConvertSteps(chArg.Steps)
+                        Name = chArg.name.Trim(),
+                        Steps = ConvertSteps(chArg.steps)
                     };
 
                     request.Chapters.Add(chapter);
@@ -147,13 +129,13 @@ namespace VRBuilder.MCP.IvanMurzak.CustomTools.Editor
             {
                 var stepArg = stepArgs[i] ?? new StepArg();
                 string defaultName = $"Step {i + 1}";
-                string stepName = string.IsNullOrWhiteSpace(stepArg.Name) ? defaultName : stepArg.Name.Trim();
+                string stepName = string.IsNullOrWhiteSpace(stepArg.name) ? defaultName : stepArg.name.Trim();
 
                 var stepData = new StepData
                 {
                     Name = stepName,
-                    Description = stepArg.Description,
-                    Position = ParsePosition(stepArg.Position)
+                    Description = stepArg.description,
+                    Position = ParsePosition(stepArg.position)
                 };
 
                 steps.Add(stepData);
@@ -182,11 +164,11 @@ namespace VRBuilder.MCP.IvanMurzak.CustomTools.Editor
     /// </summary>
     public class ChapterArg
     {
-        [Description("REQUIRED: Explicit chapter name.")]
-        public string? Name { get; set; }
+        [Description("Chapter name.")]
+        public string name { get; set; }
 
-        [Description("Optional: Steps inside the chapter. Empty chapters are allowed.")]
-        public StepArg[]? Steps { get; set; }
+        [Description("Steps inside the chapter. Empty chapters are allowed.")]
+        public StepArg[]? steps { get; set; }
     }
 
     /// <summary>
@@ -194,14 +176,14 @@ namespace VRBuilder.MCP.IvanMurzak.CustomTools.Editor
     /// </summary>
     public class StepArg
     {
-        [Description("Step name.")]
-        public string? Name { get; set; }
+        [Description("Step name. Auto-generates as Step 1, Step 2, etc. if not provided")]
+        public string? name { get; set; }
 
-        [Description("Optional step description.")]
-        public string? Description { get; set; }
+        [Description("Step description.")]
+        public string? description { get; set; }
 
-        [Description("Optional position for visual layout in VR Builder editor as [x, y] array.")]
-        public float[]? Position { get; set; }
+        [Description("Position for visual layout as [x, y] array. Suggested default: [300, 0]")]
+        public float[]? position { get; set; }
     }
 
     #endregion

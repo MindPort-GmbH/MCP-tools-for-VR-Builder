@@ -14,22 +14,23 @@ This package provides MCP tools that allow AI assistants to create and manage VR
 
 ## Quickstart Guide
 
-1. Check Dependencies below.
-2. Install VR Builder MCP Tools via the Unity package manger or by putting it into any subfolder in /Assets in your Project.
-3. From your MCP-enabled assistant that is connected to Unity via a supported Unity MCP, use a prompt like:
-   > Create a VR Builder training process in my current Unity project named that describes how to open a bottle with an bottel opener.
+1. Check the dependencies below and make sure that the MCP works by asking something like:
+   > Do you have access to the Unity MCP? If yes, tell me what is in my open scene.
+2. Install VR Builder MCP Tools as a package (via the Unity Package Manager) or by placing it in any subfolder under /Assets in your project.
+3. From an MCP-enabled assistant connected to Unity via a supported Unity MCP, use a prompt such as:
+   > Create a VR Builder training process in my current Unity project that describes how to open a bottle with a bottle opener.
 4. In Unity, open or create a VR Builder scene. On the PROCESS_CONFIGURATION GameObject, switch the scene to use the created VR Builder process and open the Process Editor.
 
 ## Dependencies
 
 ### Required
-- **Unity 6000.0.x** or higher. (Did not test with earlier versions.)
-- **VR Builder Core 5.5.0** or higher (`co.mindport.vrbuilder.core`). You can get it from folowing sources:
+- **Unity 6000.0.x** or higher. (Not tested with earlier versions.)
+- **VR Builder Core 5.5.0** or higher (`co.mindport.vrbuilder.core`). You can get it from following sources:
   - VR Builder Pro: https://assetstore.unity.com/packages/tools/game-toolkits/vr-builder-pro-toolkit-for-vr-creation-301706 
   - VR Builder Core GitHub: https://github.com/MindPort-GmbH/VR-Builder
   - VR Builder Core OpenUPM: https://openupm.com/packages/co.mindport.vrbuilder.core/
 
-### At least one Unity MCP
+### At least one Unity MCP is required
 - **CoplayDev MCP for Unity** (`com.coplaydev.unity-mcp`)
   - GitHub: https://github.com/CoplayDev/unity-mcp
 
@@ -43,14 +44,14 @@ This package provides MCP tools that allow AI assistants to create and manage VR
 ### Creating a VR Builder Process
 
 The package provides a tool called `create_vr_builder_process` which will be invoked through your MCP-enabled AI assistant.
-`create_vr_builder_process` expects as imput a JSON.
+`create_vr_builder_process` expects as input a JSON.
 
-> **JSON foramt:** `com.ivanmurzak.unity.mcp` only works with camelCase field names (`processName`, `chapters`, `steps`, `name`, `description`, `position`, `overwrite`).
+> **JSON format:** `com.ivanmurzak.unity.mcp` only works with camelCase field names (`processName`, `chapters`, `steps`, `name`, `description`, `position`, `overwrite`).
 > The CoplayDev adapter is PascalCase compatible, but all samples use camelCase for consistency.
 
 #### Example: Minimal Process (Default Empty Chapter)
 
-Promt: `Create a VR Builder training process in my current Unity project named "MyNewProcess".`
+Prompt: `Create a VR Builder training process in my current Unity project named "MyNewProcess".`
 
 The out put of your AI should be:
 ```json
@@ -65,7 +66,7 @@ Note: If no chapters are specified, there will automatically be a default empty 
 Promt:
 ```text
 Create a VR Builder training process in my current Unity project on how to make coffee with a French press. 
-Each Step should have a description. In each chapter, start with x: 300 y: 0 and increase the x by 300 with each step. 
+Each Step should have a description. In each chapter, start at x: 300, y: 0 and increase x by 300 for each step. 
 After three steps, move down and start with x: 300 y: 200, and so on.
 
 Chapter 1: Preparation
@@ -107,7 +108,7 @@ Step: Dry Equipment
 Air-dry all parts to prevent residue buildup.
 ```
 
-The out put of your AI should be:
+The output of your AI should be:
 ```json
 {
   "processName": "French Press Coffee",

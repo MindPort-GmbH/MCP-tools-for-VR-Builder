@@ -19,27 +19,11 @@ namespace VRBuilder.MCP.CoplayDev.CustomTools.Editor
     public static class CreateVRBuilderProcess
     {
         /// <summary>
-        /// Main entry point for the MCP tool. Creates a VR Builder process from JSON parameters.
+        /// Creates a VR Builder process and saves it to StreamingAssets/Processes/{processName}/{processName}.json
+        /// Each chapter includes an automatic Start step at [0, 0]. First steps should be positioned at [300, 0] to avoid overlap.
+        /// If no chapters provided, creates a default empty chapter. Empty chapters are allowed.
+        /// Steps auto-generate names as Step 1, Step 2, etc. if not provided.
         /// </summary>
-        /// <param name="params">JSON object containing ProcessName, Chapters (optional), and Overwrite (optional)</param>
-        /// <returns>Response object with success/error status and process details</returns>
-        /// <remarks>
-        /// Expected JSON format:
-        /// {
-        ///   "processName": "myProcess",
-        ///   "chapters": [
-        ///     {
-        ///       "name": "introduction",
-        ///       "steps": [  // Optional: empty chapters are allowed
-        ///         { "name": "stepName", "description": "...", "position": { "x": 100, "y": 200 } }
-        ///       ]
-        ///     }
-        ///   ],
-        ///   "overwrite": true
-        /// }
-        ///
-        /// If no chapters provided, creates a default empty chapter named "Chapter 1".
-        /// </remarks>
         public static object HandleCommand(JObject @params)
         {
             try

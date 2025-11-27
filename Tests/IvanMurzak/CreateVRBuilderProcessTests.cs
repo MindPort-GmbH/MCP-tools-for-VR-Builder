@@ -92,8 +92,8 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
 
             var chapters = new[]
             {
-                new ChapterArg { Name = "Chapter 1", Steps = null },
-                new ChapterArg { Name = "Chapter 2", Steps = new StepArg[] { } }
+                new ChapterArg { name = "Chapter 1", steps = null },
+                new ChapterArg { name = "Chapter 2", steps = new StepArg[] { } }
             };
 
             // Act
@@ -128,45 +128,45 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
             {
                 new ChapterArg
                 {
-                    Name = "Introduction",
-                    Steps = new[]
+                    name = "Introduction",
+                    steps = new[]
                     {
                         new StepArg
                         {
-                            Name = "Welcome",
-                            Description = "Welcome to the training",
-                            Position = new float[] { 300f, 0f }
+                            name = "Welcome",
+                            description = "Welcome to the training",
+                            position = new float[] { 300f, 0f }
                         },
                         new StepArg
                         {
-                            Name = "Safety Brief",
-                            Description = "Review safety procedures",
-                            Position = new float[] { 600f, 0f }
+                            name = "Safety Brief",
+                            description = "Review safety procedures",
+                            position = new float[] { 600f, 0f }
                         }
                     }
                 },
                 new ChapterArg
                 {
-                    Name = "Practical Exercise",
-                    Steps = new[]
+                    name = "Practical Exercise",
+                    steps = new[]
                     {
                         new StepArg
                         {
-                            Name = "Step 1",
-                            Description = "First practical step",
-                            Position = new float[] { 300f, 100f }
+                            name = "Step 1",
+                            description = "First practical step",
+                            position = new float[] { 300f, 100f }
                         },
                         new StepArg
                         {
-                            Name = "Step 2",
-                            Description = "Second practical step",
-                            Position = new float[] { 600f, 100f }
+                            name = "Step 2",
+                            description = "Second practical step",
+                            position = new float[] { 600f, 100f }
                         },
                         new StepArg
                         {
-                            Name = "Step 3",
-                            Description = "Final step",
-                            Position = new float[] { 900f, 100f }
+                            name = "Step 3",
+                            description = "Final step",
+                            position = new float[] { 900f, 100f }
                         }
                     }
                 }
@@ -208,11 +208,11 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
             {
                 new ChapterArg
                 {
-                    Name = "Main Chapter",
-                    Steps = new[]
+                    name = "Main Chapter",
+                    steps = new[]
                     {
-                        new StepArg { Name = "Step 1" },
-                        new StepArg { Name = "Step 2" }
+                        new StepArg { name = "Step 1" },
+                        new StepArg { name = "Step 2" }
                     }
                 }
             };
@@ -245,7 +245,7 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
 
             var chapters = new[]
             {
-                new ChapterArg { Name = null, Steps = new StepArg[] { } } // Missing name
+                new ChapterArg { name = null, steps = new StepArg[] { } } // Missing name
             };
 
             // Act
@@ -274,7 +274,7 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
 
             var chapters = new[]
             {
-                new ChapterArg { Name = "Valid Chapter", Steps = new StepArg[] { } }
+                new ChapterArg { name = "Valid Chapter", steps = new StepArg[] { } }
             };
 
             // Act
@@ -303,12 +303,12 @@ namespace VRBuilder.MCP.Tests.IvanMurzak
             {
                 new ChapterArg
                 {
-                    Name = "Test Chapter",
-                    Steps = new[]
+                    name = "Test Chapter",
+                    steps = new[]
                     {
-                        new StepArg { Name = "Step 1", Position = null },
-                        new StepArg { Name = "Step 2", Position = null },
-                        new StepArg { Name = "Step 3", Position = null }
+                        new StepArg { name = "Step 1", position = null },
+                        new StepArg { name = "Step 2", position = null },
+                        new StepArg { name = "Step 3", position = null }
                     }
                 }
             };

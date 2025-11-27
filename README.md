@@ -1,6 +1,6 @@
 # VR Builder MCP Tools
 
-Custom MCP tools for VR Builder, enabling AI-assisted creation and modification of VR training processes.
+MCP tools for VR Builder, enabling AI-assisted creation and modification of VR training processes.
 
 ## Overview
 
@@ -148,6 +148,12 @@ The out put of your AI should be:
 }
 
 ```
+
+Created process in Unity:
+
+<img width="1463" height="568" alt="Screenshot 2025-11-27 093250" src="https://github.com/user-attachments/assets/c57acab9-97e4-457c-a367-5f086247502f" />
+
+
 ### Response Format
 
 Both adapters return a consistent JSON response structure containing the created process and the project-relative path to the created VR Builder process JSON.

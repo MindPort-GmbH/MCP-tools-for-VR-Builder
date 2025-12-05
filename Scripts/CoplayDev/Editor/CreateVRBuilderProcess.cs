@@ -38,7 +38,7 @@ namespace VRBuilder.MCP.CoplayDev.CustomTools.Editor
                 if (result.Success)
                 {
                     var responseData = ProcessCreationResponse.FromResult(result);
-                    return Response.Success(
+                    return new SuccessResponse(
                         result.Message,
                         new
                         {
@@ -49,12 +49,12 @@ namespace VRBuilder.MCP.CoplayDev.CustomTools.Editor
                 }
                 else
                 {
-                    return Response.Error(result.Message);
+                    return new ErrorResponse(result.Message);
                 }
             }
             catch (Exception ex)
             {
-                return Response.Error($"Error creating VR Builder process: {ex.Message}");
+                return new ErrorResponse($"Error creating VR Builder process: {ex.Message}");
             }
         }
 

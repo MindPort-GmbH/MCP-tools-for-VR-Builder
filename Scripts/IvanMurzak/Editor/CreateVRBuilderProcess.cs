@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using UnityEngine;
-using com.IvanMurzak.Unity.MCP.Common;
+using com.IvanMurzak.McpPlugin;
 using com.IvanMurzak.ReflectorNet.Utils;
+using UnityEngine;
 using VRBuilder.MCP.Core;
 using VRBuilder.MCP.Core.Models;
 

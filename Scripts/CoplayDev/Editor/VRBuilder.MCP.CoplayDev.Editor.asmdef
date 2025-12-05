@@ -19,7 +19,7 @@
     "versionDefines": [
         {
             "name": "com.coplaydev.unity-mcp",
-            "expression": "",
+            "expression": "8.1.6",
             "define": "COPLAYDEV_MCP_INSTALLED"
         }
     ],

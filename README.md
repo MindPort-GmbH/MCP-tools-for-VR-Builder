@@ -14,12 +14,11 @@ This package provides MCP tools that allow AI assistants to create and manage VR
 
 ## Quickstart Guide
 
-1. Check the dependencies below and make sure that the MCP works by asking something like:
-   > Do you have access to the Unity MCP? If yes, tell me what is in my open scene.
+1. Check the dependencies below and make sure that the MCP works by asking your MCP-enabled assistant something like: `Do you have access to the Unity MCP? If yes, tell me what is in my open scene.`
 2. Install VR Builder MCP Tools as a package (via the Unity Package Manager) or by placing it in any subfolder under /Assets in your project.
-3. From an MCP-enabled assistant connected to Unity via a supported Unity MCP, use a prompt such as:
-   > Create a VR Builder training process in my current Unity project that describes how to open a bottle with a bottle opener.
-4. In Unity, open or create a VR Builder scene. On the PROCESS_CONFIGURATION GameObject, switch the scene to use the created VR Builder process and open the Process Editor.
+3. In the MCP settings in Unity, restart the Unity MCP Server so it knows about the new tools.
+4. Write a prompt such as: `Create a VR Builder training process in my current Unity project that describes how to open a bottle with a bottle opener. Use the MCP tool create_vr_builder_process and use camelCase field names in the JSON.`
+5. In Unity, open or create a VR Builder scene. On the PROCESS_CONFIGURATION GameObject, switch the scene to use the created VR Builder process and open the Process Editor.
 
 ## Dependencies
 
